@@ -20,9 +20,10 @@ class Imagem {
         nota atrrtibutes:[notas: 1..5]
         
         
-        
+        autor()
         fileNome(blank:true, nullable:true)
         fileFormato(blank:true, nullable:true)
         fileImg(nullable:true, maxSize: 1073741824)
+       
     }
 }

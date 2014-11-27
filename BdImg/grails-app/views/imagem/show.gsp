@@ -59,6 +59,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${imagemInstance?.autor}">
+				<li class="fieldcontain">
+					<span id="autor-label" class="property-label"><g:message code="imagem.autor.label" default="Autor" /></span>
+					
+						<span class="property-value" aria-labelledby="autor-label"><g:link controller="autor" action="show" id="${imagemInstance?.autor?.id}">${imagemInstance?.autor?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${imagemInstance?.fileNome}">
 				<li class="fieldcontain">
 					<span id="fileNome-label" class="property-label"><g:message code="imagem.fileNome.label" default="File Nome" /></span>
@@ -79,19 +88,10 @@
 			
 				<g:if test="${imagemInstance?.fileImg}">
 				<li class="fieldcontain">
-					<span id="fileImg-label" class="property-label"><g:message code="imagem.fileImg.label" default="File Img" /></span>
+					<span id="fileImg-label" class="property-label"><g:message code="imagem.fileImg.label" default="Imagem" /></span>
 					
-				</li>
-				</g:if>
-			
-				<g:if test="${imagemInstance?.autor}">
-				<li class="fieldcontain">
-					<span id="autor-label" class="property-label"><g:message code="imagem.autor.label" default="Autor" /></span>
-					<g:fieldValue bean="${imagemInstance}" field="id"/>
-                                        <img src="${createLink(action:'displayImagem', id:imagemInstance?.id)}" width="780" height="600"/>
-                                        <g:fieldValue bean="${imagemInstance}" field="fileNome"/>
-					<span class="property-value" aria-labelledby="autor-label"><g:link controller="autor" action="show" id="${imagemInstance?.autor?.id}">${imagemInstance?.autor?.encodeAsHTML()}</g:link></span>
-					
+                                        <img src="${createLink(action:'displayImagem', id:imagemInstance?.id)}" width="720" height="550" style=" margin-top: 10px; margin-left: 45px"/>
+                                        
 				</li>
 				</g:if>
 			

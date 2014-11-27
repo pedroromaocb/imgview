@@ -32,9 +32,11 @@
 					
 						<g:sortableColumn property="nota" title="${message(code: 'imagem.nota.label', default: 'Nota')}" />
 					
-						<g:sortableColumn property="fileNome" title="${message(code: 'imagem.fileNome.label', default: 'File Nome')}" />
+						<th><g:message code="imagem.autor.label" default="Autor" /></th>
 					
-						<g:sortableColumn property="fileFormato" title="${message(code: 'imagem.fileFormato.label', default: 'File Formato')}" />
+						<g:sortableColumn property="fileNome" title="${message(code: 'imagem.fileNome.label', default: 'File Nome')}" />
+                                                
+                                                <g:sortableColumn property="fileImg" title="${message(code: 'imagem.fileImg.label', default: 'Imagem')}" />
 					
 					</tr>
 				</thead>
@@ -50,9 +52,11 @@
 					
 						<td>${fieldValue(bean: imagemInstance, field: "nota")}</td>
 					
-						<td>${fieldValue(bean: imagemInstance, field: "fileNome")}</td>
+						<td>${fieldValue(bean: imagemInstance, field: "autor")}</td>
 					
-						<td>${fieldValue(bean: imagemInstance, field: "fileFormato")}</td>
+						<td>${fieldValue(bean: imagemInstance, field: "fileNome")}</td>
+                                                
+                                                <td><img src="${createLink(action:'displayImagem', id:imagemInstance?.id)}" width="300" height="250"/></td>
 					
 					</tr>
 				</g:each>

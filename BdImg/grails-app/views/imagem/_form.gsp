@@ -38,6 +38,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: imagemInstance, field: 'autor', 'error')} required">
+	<label for="autor">
+		<g:message code="imagem.autor.label" default="Autor" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="autor" name="autor.id" from="${bdimg.Autor.list()}" optionKey="id" required="" value="${imagemInstance?.autor?.id}" class="many-to-one"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: imagemInstance, field: 'fileNome', 'error')} ">
 	<label for="fileNome">
 		<g:message code="imagem.fileNome.label" default="File Nome" />
@@ -62,15 +71,6 @@
 		
 	</label>
 	<input type="file" id="fileImg" name="fileImg" />
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: imagemInstance, field: 'autor', 'error')} required">
-	<label for="autor">
-		<g:message code="imagem.autor.label" default="Autor" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="autor" name="autor.id" from="${bdimg.Autor.list()}" optionKey="id" required="" value="${imagemInstance?.autor?.id}" class="many-to-one"/>
 
 </div>
 

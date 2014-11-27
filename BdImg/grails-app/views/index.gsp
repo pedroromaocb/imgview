@@ -83,38 +83,37 @@
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="status" role="complementary">
-			<h1>Application Status</h1>
+			<h1>BD Web Imagens</h1>
+                        <ul>
+                            Armazene as suas fotos com segurança e organização nos servidores OnLine ... </br>
+                        </ul>    
+			<h1>UFRN - Telecom/C&T</h1>
 			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${GroovySystem.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
+                            <li><p>Projeto de Banco de Dados e Engenharia de Software realizado em 2014.2</br></p> </li>
+                            <li><p><b>Professor:</b> Hertz Wilson</br></p></li>
+                            <li><p><h2>Participantes:</h2></br></p></li>
+                            <li><p><b>Banco de Dados:</b></br>
+                            Pedro Romão</br>
+                            Heitor Diogenes</p></br></li>
+                            <li><p><b>Engenharia de Software:</b></br>
+                            Pedro Romão</br>
+                            Eliedson da Silva</br>
+                            George Maxwell</p></li>
+                            
 			</ul>
 		</div>
 		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
+			<h1>Bem vindo à página</h1>
+			<h2>Abaixo se encontram os links de cadastro:</h2>
+                        <p>** DICA: É necessário um autor para realização do cadastro da foto</p>
+                        
 
 			<div id="controller-list" role="navigation">
 				<h2>Available Controllers:</h2>
 				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
+                                    <li><g:link controller="imagem" action="index">Controle de Imagens</g:link></li>
+                                    <li><g:link controller="autor" action="index">Controle de Autores</g:link></li>
+                                    <li><p>Em breve: Localização</p></li>
 				</ul>
 			</div>
 		</div>

@@ -87,8 +87,10 @@
 				<g:if test="${imagemInstance?.autor}">
 				<li class="fieldcontain">
 					<span id="autor-label" class="property-label"><g:message code="imagem.autor.label" default="Autor" /></span>
-					
-						<span class="property-value" aria-labelledby="autor-label"><g:link controller="autor" action="show" id="${imagemInstance?.autor?.id}">${imagemInstance?.autor?.encodeAsHTML()}</g:link></span>
+					<g:fieldValue bean="${imagemInstance}" field="id"/>
+                                        <img src="${createLink(action:'displayImagem', id:imagemInstance?.id)}" width="780" height="600"/>
+                                        <g:fieldValue bean="${imagemInstance}" field="fileNome"/>
+					<span class="property-value" aria-labelledby="autor-label"><g:link controller="autor" action="show" id="${imagemInstance?.autor?.id}">${imagemInstance?.autor?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

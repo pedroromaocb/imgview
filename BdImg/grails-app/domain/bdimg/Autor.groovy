@@ -12,4 +12,7 @@ class Autor {
         emailAutor email: true
         
     }
+    String toString(){
+        return nomeAutor
+    } 
 }

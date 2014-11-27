@@ -11,12 +11,14 @@ class Imagem {
     String fileNome
     String fileFormato
     
+    static belongsTo = [autor: Autor]
 
     static constraints = {
         titulo()
         descricao widget: "textarea"
         data()
         nota atrrtibutes:[notas: 1..5]
+        
         
         
         fileNome(blank:true, nullable:true)

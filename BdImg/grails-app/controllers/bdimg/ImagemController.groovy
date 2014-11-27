@@ -24,24 +24,30 @@ class ImagemController {
     }
 
     @Transactional
-    def save() {
-        def imagemInstance = new Imagem(params)
-        def uploadedFile = request.getFile('fileImg')
-        imagemInstance.fileImg = uploadedFile.getBytes() //converting the file to bytes
-        imagemInstance.fileNome = uploadedFile.originalFilename //getting the file name from the uploaded file
-        imagemInstance.fileFormato = uploadedFile.contentType//getting and storing the file type
-        imagemInstance.save() //Create the record in DB by sending the needed Select command
-        redirect(action: "index")
+    def save(Imagem imagemInstance) {
+        if (imagemInstance == null) {
+            notFound()
+            return
+        }
+
+        if (imagemInstance.hasErrors()) {
+            respond imagemInstance.errors, view:'create'
+            return
+        }
+
+        imagemInstance.save flush:true
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'imagem.label', default: 'Imagem'), imagemInstance.id])
+                redirect imagemInstance
+            }
+            '*' { respond imagemInstance, [status: CREATED] }
+        }
     }
 
     def edit(Imagem imagemInstance) {
         respond imagemInstance
-    }
-    
-    def displayImagem() {
-        def imagemInstance = Imagem.get(params.id)
-        response.outputStream << imagemInstance.fileImg // write the image to the outputstream
-        response.outputStream.flush()
     }
 
     @Transactional

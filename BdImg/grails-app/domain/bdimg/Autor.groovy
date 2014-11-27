@@ -5,7 +5,7 @@ class Autor {
     String nomeAutor
     String emailAutor
     
-    static hasMany = [autores: Autor]
+    static hasMany = [imagens: Imagem]
     
     static constraints = {
         nomeAutor()

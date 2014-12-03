@@ -90,7 +90,7 @@
 			<h1>UFRN - Telecom/C&T</h1>
 			<ul>
                             <li><p>Projeto de Banco de Dados e Engenharia de Software realizado em 2014.2</br></p> </li>
-                            <li><p><b>Professor:</b> Hertz Wilson</br></p></li>
+                            <li><p><b>Professor:</b> Hertz Linz</br></p></li>
                             <li><p><h2>Participantes:</h2></br></p></li>
                             <li><p><b>Banco de Dados:</b></br>
                             Pedro Romão</br>
